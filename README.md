@@ -14,11 +14,10 @@ I am extremely grateful that he put together the Linux guide for getting Microso
 
 # Preparation
 
-Install Bottles from flatpak and use your package manager to install cabextract which is needed to
-unpack the IE7 installer.
+Install Bottles from flatpak and use your package manager to install `wget` for file downloads and `cabextract` for unpacking the IE7 installer.
 ```
 # Arch Linux
-sudo pacman -S cabextract
+sudo pacman -S wget cabextract
 ```
 
 # Downloads
