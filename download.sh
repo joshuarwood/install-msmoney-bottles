@@ -10,12 +10,18 @@ for entry in \
     set -- $entry
     url=$1
     checksum=$2
+    path="$(echo ${url:7} | rev | cut -d/ -f 1 | rev)"
+
+    if [ -f $path ]; then
+        printf "${path} already exists\n"
+        printf "    Skipping download\n\n"
+	continue
+    fi
 
     # download with wget
     wget $url
 
     # validate checksums to ensure files haven't been tampered with
-    path="$(echo ${url:7} | rev | cut -d/ -f 1 | rev)"
     thischecksum=`md5sum $path | cut -d' ' -f 1`
     if [ $checksum = $thischecksum ]; then
         printf "Successfully downloaded ${path}\n"
