@@ -94,6 +94,26 @@ If it fails... well.. I can try to address it if you submit an issue but
 we might need to wait for another fix from [Nathan Giard](https://drive.google.com/drive/folders/1QerT2ylQzDK4an76atBpcdivF9Hy-nIa).
 Many, many thanks and credit go to Nathan for figuring this process out.
 
+# Fixing Subtotal Column
+The default `comctl32.dll` included with modern wine will result in misaligned subtotal entries on the accounts page.
+To fix it you'll need to download `msmoneysetup_Linux_64bit_FullInstall_30Jan2026.zip` from 
+[Nathan's Shared Files](https://drive.google.com/drive/folders/1QerT2ylQzDK4an76atBpcdivF9Hy-nIa), unzip it, and copy
+`msmoneysetup/moneyinstaller/comctl32.dll` to this project's directory. Then run
+```
+bash comctl32-patch.sh BottleName
+```
+to install it.
+
+You'll also need to add a DLL override for this version of `comctl32`. Open Bottles and navigate
+to your bottle with Microsoft Money. From there select Settings followed by DLL Overrides under
+the Compatibility section. Enter `comctl32` and click the blue checkmark to complete the override.
+
+I do not know which version of Windows this DLL comes from, but it appears to work well. If you want.
+to revert to the original DLL from your wine installation do
+```
+bash comctl32-restore.sh BottleName
+```
+
 # References
 [1] [Microsoft Money Offline Linux Instructions](https://microsoftmoneyoffline.wordpress.com/2025/02/22/running-money-on-linux-os/)
 
