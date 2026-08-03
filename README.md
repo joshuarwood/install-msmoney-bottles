@@ -108,8 +108,9 @@ You'll also need to add a DLL override for this version of `comctl32`. Open Bott
 to your bottle with Microsoft Money. From there select Settings followed by DLL Overrides under
 the Compatibility section. Enter `comctl32` and click the blue checkmark to complete the override.
 
-I do not know which version of Windows this DLL comes from, but it appears to work well. If you want.
-to revert to the original DLL from your wine installation do
+I do not know which version of Windows this DLL comes from, but it appears to work well. The md5
+checksum should be `8ef154f91dcf052fad3419f04a1a1463`. If you want to revert to the original DLL
+from your wine installation do
 ```
 bash comctl32-restore.sh BottleName
 ```
