@@ -2,7 +2,7 @@
 This project contains instructions and scripts for installing Microsoft Money Deluxe Sunset in Arch Linux using [Bottles](https://usebottles.com/).
 It is based on the [work by Nathan Giard](https://microsoftmoneyoffline.wordpress.com/2025/02/22/running-money-on-linux-os/)
 with the main difference being that it uses a sandboxed wine bottle instead of system wine.
-This because I have preferences for:
+This is because I have preferences for:
 
 1. Using the Bottles interface from flatpak
 2. Limiting sudo use within scripts downloaded from the internet
