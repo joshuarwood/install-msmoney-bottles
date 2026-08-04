@@ -24,7 +24,7 @@ NVAPI: dxvk-nvapi-v0.9.2
 Name: Money
 Parameters:
     custom_dpi: 96
-    decorated: true
+    decorated: false
     discrete_gpu: false
     dxvk: false
     dxvk_nvapi: false
