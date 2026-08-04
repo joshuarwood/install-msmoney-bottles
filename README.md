@@ -8,7 +8,7 @@ This because I have preferences for:
 2. Limiting sudo use within scripts downloaded from the internet
 3. Grabbing files from Internet Archive
 
-These are purely my personal choices and are not intended to be a criticism of Nathan's work. In fact,
+These are purely my personal choices and are not intended to be a criticism of Nathan's work.
 I am extremely grateful that he put together the Linux guide for getting Microsoft Money working in 64 bit mode.
 
 The following guide assumes you're familiar with running commands within a terminal.
@@ -35,7 +35,7 @@ bash download.sh
 Microsoft Money requires Internet Explorer 7 to work properly, which is a pain since it won't install in newer
 versions of wine with WoW64 support. Luckily, we only need a couple of the DLLs so we can extract them from the
 installer and copy them to the wowsys64 directory of your bottle with an extractor script. Do this by
-specifying the bottle name you used in the Preparation step.
+specifying the bottle name you used in the **Preparation** step.
 ```
 bash ie7-extract.sh BottleName
 ```
@@ -43,7 +43,7 @@ Note: You'll need to replace spaces in the bottle name with `-` for this step si
 chooses to name the system prefix path. For example, `MS Money` would become `MS-Money`.
 
 We now need to register some of the extracted files. Do this by going to Bottles and selecting your bottle name.
-Scroll to the bottom where it says Tools and click on Command Line to bring up a Windows command prompt.
+Scroll to the bottom where it says Tools and click on **Command Line** to bring up a Windows command prompt.
 Enter the following two commands:
 ```
 cd drive_c\windows\syswow64
@@ -72,23 +72,21 @@ Close the command prompt after seeing the final `regedit ie7dlls.reg` command.
 
 # Installing Microsoft Money
 Open Bottles and select the bottle where you installed the Internet Explorer 7 patches.
-Click the Run Executable button at the top and select the `USMoneyDlxSunset.exe` file that
-was downloaded to this project directory during the Preparation step. An installer window
+Click the **Run Executable** button at the top and select the `USMoneyDlxSunset.exe` file that
+was downloaded to this project directory during the **Preparation** step. An installer window
 should pop up. The install should complete relatively quickly (<1 min) on most modern computers
 after you click through the agreements pages.
 
-To run the program I recommend setting up a shortcut under the Programs section. Do this
-by clicking Add Shortcuts and navigate to
+To run the program I recommend setting up a shortcut under the **Programs** section. Do this
+by clicking **Add Shortcuts** and navigate to
 ```
 drive_c/Program Files (x86)/Microsoft Money Plus/MNYCoreFiles/msmoney.exe
 ```
 Click OK to accept after selecting `msmoney.exe`.
 
 You should now see an `msmoney` button under the Programs section with a play icon next to it.
-Clicking the play icon should start Microsoft Money. You may see a black bar at the top of the
-window when in full screen. This should disappear when you minimize. 
-
-Click the File tab in the top left and open a new file. If this works, then you're good to go!
+Clicking the play icon should start Microsoft Money. Click the **File** tab in the top left and
+open a new file. If this works, then you're good to go!
 
 If it fails... well.. I can try to address it if you submit an issue but
 we might need to wait for another fix from [Nathan Giard](https://drive.google.com/drive/folders/1QerT2ylQzDK4an76atBpcdivF9Hy-nIa).
@@ -105,8 +103,8 @@ bash comctl32-patch.sh BottleName
 to install it.
 
 You'll also need to add a DLL override for this version of `comctl32`. Open Bottles and navigate
-to your bottle with Microsoft Money. From there select Settings followed by DLL Overrides under
-the Compatibility section. Enter `comctl32` and click the blue checkmark to complete the override.
+to your bottle with Microsoft Money. From there select **Settings** followed by **DLL Overrides** under
+the **Compatibility** section. Enter `comctl32` and click the blue checkmark to complete the override.
 
 I do not know which version of Windows this DLL comes from, but it appears to work well. The md5
 checksum should be `8ef154f91dcf052fad3419f04a1a1463`. If you want to revert to the original DLL
