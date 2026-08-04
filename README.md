@@ -1,7 +1,7 @@
 # Introduction
 This project contains instructions and scripts for installing Microsoft Money Deluxe Sunset in Arch Linux using [Bottles](https://usebottles.com/).
-It is based on the [work by Nathan Giard](https://microsoftmoneyoffline.wordpress.com/2025/02/22/running-money-on-linux-os/)
-with the main difference being that it uses a sandboxed wine bottle instead of system wine.
+It is based on [work by Nathan Giard](https://microsoftmoneyoffline.wordpress.com/2025/02/22/running-money-on-linux-os/)
+with the difference being that it uses a sandboxed wine bottle instead of system wine.
 This is because I have preferences for:
 
 1. Using the Bottles interface from flatpak
@@ -43,7 +43,7 @@ specifying the bottle name you used in the **Preparation** step.
 bash ie7-extract.sh BottleName
 ```
 Note: You'll need to replace spaces in the bottle name with `-` for this step since that is how Bottles
-chooses to name the system prefix path. For example, `MS Money` would become `MS-Money`.
+names the system prefix path. For example, `MS Money` would become `MS-Money`.
 
 We now need to register some of the extracted files. Do this by going to Bottles and selecting your bottle name.
 Scroll to the bottom where it says **Tools** and click on **Command Line** to bring up a Windows command prompt.
