@@ -15,15 +15,18 @@ The following guide assumes you're familiar with running commands within a termi
 
 # Preparation
 
-Install Bottles from flatpak and use your package manager to install `wget` for file downloads and `cabextract` for unpacking the IE7 installer.
+Install [Bottles](https://usebottles.com/) from flatpak and use your package manager to install `wget` for file downloads and `cabextract` for unpacking the IE7 installer.
 ```
 # Arch Linux
 sudo pacman -S wget cabextract
 ```
 
-Setup a new custom bottle using the `msmoney_bottle.yml` configuration included in this project. This will automatically
-install the `msxml3 msxml4 tahoma32 vcrun2005` dependencies needed by Microsoft Money in addition to `gecko`
-and `mono`.
+Setup a new custom bottle using the `msmoney_bottle.yml` configuration included in this project. 
+
+![Bottle Setup](screenshots/bottle-setup.png)
+
+This will automatically install the `msxml3 msxml4 tahoma32 vcrun2005` dependencies needed by
+Microsoft Money in addition to `gecko` and `mono`.
 
 Run the download script to collect copies of Microsoft Money Deluxe Sunset and IE7 installers from Internet Archive.
 This step will verify the md5sum checksums on each file to ensure they are the correct files.
@@ -43,7 +46,10 @@ Note: You'll need to replace spaces in the bottle name with `-` for this step si
 chooses to name the system prefix path. For example, `MS Money` would become `MS-Money`.
 
 We now need to register some of the extracted files. Do this by going to Bottles and selecting your bottle name.
-Scroll to the bottom where it says Tools and click on **Command Line** to bring up a Windows command prompt.
+Scroll to the bottom where it says **Tools** and click on **Command Line** to bring up a Windows command prompt.
+
+![Tools](screenshots/tools.png)
+
 Enter the following two commands:
 ```
 cd drive_c\windows\syswow64
@@ -84,11 +90,15 @@ drive_c/Program Files (x86)/Microsoft Money Plus/MNYCoreFiles/msmoney.exe
 ```
 Click OK to accept after selecting `msmoney.exe`.
 
-You should now see an `msmoney` button under the Programs section with a play icon next to it.
-Clicking the play icon should start Microsoft Money. Click the **File** tab in the top left and
-open a new file. If this works, then you're good to go!
+You should now see an `msmoney` button under the **Programs** section with a play icon next to it.
+
+![Programs](screenshots/add-program.png)
+
+Clicking the play icon should start Microsoft Money.
 
 ![Microsoft Money Screenshot](screenshots/money.png)
+
+Click the **File** tab in the top left and open a new file. If this works, then you're good to go!
 
 If it fails... well.. I can try to address it if you submit an issue but
 we might need to wait for another fix from [Nathan Giard](https://drive.google.com/drive/folders/1QerT2ylQzDK4an76atBpcdivF9Hy-nIa).
@@ -107,6 +117,8 @@ to install it.
 You'll also need to add a DLL override for this version of `comctl32`. Open Bottles and navigate
 to your bottle with Microsoft Money. From there select **Settings** followed by **DLL Overrides** under
 the **Compatibility** section. Enter `comctl32` and click the blue checkmark to complete the override.
+
+![DLL Override](screenshots/dll-override.png)
 
 I do not know which version of Windows this DLL comes from, but it appears to work well. The md5
 checksum should be `8ef154f91dcf052fad3419f04a1a1463`. If you want to revert to the original DLL
