@@ -88,6 +88,8 @@ You should now see an `msmoney` button under the Programs section with a play ic
 Clicking the play icon should start Microsoft Money. Click the **File** tab in the top left and
 open a new file. If this works, then you're good to go!
 
+![Microsoft Money Screenshot](screenshots/money.png)
+
 If it fails... well.. I can try to address it if you submit an issue but
 we might need to wait for another fix from [Nathan Giard](https://drive.google.com/drive/folders/1QerT2ylQzDK4an76atBpcdivF9Hy-nIa).
 Many, many thanks and credit go to Nathan for figuring this process out.
